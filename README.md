@@ -1,5 +1,21 @@
 # Custom JupyterLite Environment
 
+## Steps
+
+```mermaid
+flowchart TD
+    A{Custom packages?} -- Yes --> B[Build custom Pyodide distribution]
+    A -- No --> C[Create a JupyterLite repo from the template]
+    B --> C
+    C --> D{Custom Pyodide environment?}
+    D -- No --> E[Remove the default content]
+    D -- Yes --> F[Create jupyter-lite.json referencing your Pyodide build]
+    F --> E
+    E --> G[Add your data and notebooks]
+```
+
+## Shell History
+
 ```bash
 % cd content 
 % ls
