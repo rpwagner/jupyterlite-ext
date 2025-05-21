@@ -1,6 +1,6 @@
 # Custom JupyterLite Environment
 
-## Steps
+## Workflow
 
 ```mermaid
 flowchart TD
@@ -14,50 +14,20 @@ flowchart TD
     E --> G[Add your data and notebooks]
 ```
 
-## Shell History
+## Steps
 
-```bash
-% cd content 
-% ls
-data			p5.ipynb		python.ipynb
-javascript.ipynb	pyodide
-% git rm *ipynb
-rm 'content/javascript.ipynb'
-rm 'content/p5.ipynb'
-rm 'content/python.ipynb'
-(base) rpwagner@Corsair content % cd da
-(base) rpwagner@Corsair content % git rm -rf pyodide 
-rm 'content/pyodide/altair.ipynb'
-rm 'content/pyodide/folium.ipynb'
-rm 'content/pyodide/interactive-widgets.ipynb'
-rm 'content/pyodide/ipycanvas.ipynb'
-rm 'content/pyodide/ipyleaflet.ipynb'
-rm 'content/pyodide/matplotlib.ipynb'
-rm 'content/pyodide/plotly.ipynb'
-rm 'content/pyodide/pyb2d/0_tutorial.ipynb'
-rm 'content/pyodide/pyb2d/color_mixing.ipynb'
-rm 'content/pyodide/pyb2d/games/angry_shapes.ipynb'
-rm 'content/pyodide/pyb2d/games/billiard.ipynb'
-rm 'content/pyodide/pyb2d/games/goo.ipynb'
-rm 'content/pyodide/pyb2d/games/rocket.ipynb'
-rm 'content/pyodide/pyb2d/gauss_machine.ipynb'
-rm 'content/pyodide/pyb2d/newtons_cradle.ipynb'
-rm 'content/pyodide/renderers.ipynb'
-(base) rpwagner@Corsair content %% git rm data/*
-rm 'content/data/Museums_in_DC.geojson'
-rm 'content/data/bar.vl.json'
-rm 'content/data/fasta-example.fasta'
-rm 'content/data/iris.csv'
-rm 'content/data/matplotlib.png'
+1. Create a new repo using the [JupyterLite template repository](https://github.com/jupyterlite/demo). Follow ;the instructions](https://jupyterlite.readthedocs.io/en/latest/quickstart/deploy.html) to make sure the GitHub Pages build process is set up and creating your new JupyterLite site.
+2. If you created or are using a custom Pyodide build, create a `jupyter-lite.json` configuration file at the top level of your new repository (see [the example in this repo](jupyter-lite.json)), e.g.,
+```json
 {
   "jupyter-lite-schema-version": 0,
   "jupyter-config-data": {
     "litePluginSettings": {
       "@jupyterlite/pyodide-kernel-extension:kernel": {
-        "pyodideUrl": "https://rickwagner.io/pyodide-ext/pyodide.js"
+        "pyodideUrl": "https://<your github pages domain?/pyodide-ext/pyodide.js"
       }
     }
   }
 }
 ```
-
+3. Update the notebooks and data in the [content](./content/) folder. Remove the sample notebooks and data you don't need, and add your own.
