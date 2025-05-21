@@ -1,5 +1,8 @@
 # Custom JupyterLite Environment
 
+- [Workflow](#workflow)
+- [Steps](#steps)
+
 ## Workflow
 
 ```mermaid
@@ -16,7 +19,7 @@ flowchart TD
 
 ## Steps
 
-1. Create a new repo using the [JupyterLite template repository](https://github.com/jupyterlite/demo). Follow ;the instructions](https://jupyterlite.readthedocs.io/en/latest/quickstart/deploy.html) to make sure the GitHub Pages build process is set up and creating your new JupyterLite site.
+1. Create a new repo using the [JupyterLite template repository](https://github.com/jupyterlite/demo). Follow [the instructions](https://jupyterlite.readthedocs.io/en/latest/quickstart/deploy.html) to make sure the GitHub Pages build process is set up and creating your new JupyterLite site.
 2. If you created or are using a custom Pyodide build, create a `jupyter-lite.json` configuration file at the top level of your new repository (see [the example in this repo](jupyter-lite.json)), e.g.,
 ```json
 {
